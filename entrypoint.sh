@@ -16,6 +16,5 @@ echo -n 'Files to Commit:' && ls -l | wc -l && \
 git commit -m'action build' > /dev/null 2>&1 && \
 git push --force $remote_repo master:$remote_branch > /dev/null 2>&1 && \
 rm -fr .git && \
-cd ../ && \
-curl -H "Authorization: token ${GITHUB_TOKEN}" -H "Accept: application/vnd.github.mister-fantastic-preview+json" -X POST https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/builds
+cd ../
 echo '👍 GREAT SUCCESS!'
